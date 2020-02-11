@@ -25,7 +25,7 @@ def index(request):
     return render(request, 'rango/index.html', context=context_dict)
     
 def about(request): 
-        # Construct a dictionary to pass to the template engine as its context.
+    # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage matches to {{ boldmessage }} in the template!
     context_dict = {'boldmessage': 'This tutorial has been put together by Lloyd Owen'}
     
@@ -56,7 +56,7 @@ def add_category(request):
           
           if form.is_valid(): 
                form.save(commit=True)
-               return redirect('/rango/')
+               return redirect(reverse('rango:index'))
           else: 
                print(form.errors)
      return render(request, 'rango/add_category.html', {'form': form})
@@ -68,7 +68,7 @@ def add_page(request, category_name_slug):
           category = None
           
      if category is None: 
-          return redirect('/rango/')
+          return redirect(reverse('rango:index'))
      
      form = PageForm()
      
