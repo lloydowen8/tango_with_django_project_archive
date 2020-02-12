@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'rango/index.html', context=context_dict)
     
 def about(request): 
-        # Construct a dictionary to pass to the template engine as its context.
+    # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage matches to {{ boldmessage }} in the template!
     context_dict = {'boldmessage': 'This tutorial has been put together by Lloyd Owen'}
     
