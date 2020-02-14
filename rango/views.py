@@ -16,10 +16,6 @@ def index(request):
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
-    
-    visitor_cookie_handler(request)
-
-    
     response = render(request, 'rango/index.html', context=context_dict)
     return response
     
